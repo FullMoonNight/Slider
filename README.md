@@ -2,4 +2,4 @@
 
 Demo: https://fullmoonnight.github.io/Slider/
 
-Customizable plugin with autos-croll.
+Customizable plugin with auto-scroll.
