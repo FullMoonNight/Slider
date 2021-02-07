@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+$j: #13d3a3;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ccc;
+  font-family: "Roboto", sans-serif;
+}
+
+#slider {
+  width: 600px;
+  height: 350px;
+}
+
+#slider .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 30px;
+
+  .slider {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    left: 0;
+    background-color: #191e4b;
+    transition: left 0.2s;
+
+    .elem {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 40px 40px;
+      background: no-repeat;
+      background-size: cover;
+
+      h1 {
+        transform: translateX(150px);
+        opacity: 0;
+        transition: ease-out 0.3s;
+      }
+
+      p {
+        transform: translateX(150px);
+        opacity: 0;
+        transition: ease-out 0.4s;
+      }
+
+      &.active {
+        h1 {
+          transform: translateX(0);
+          opacity: 1;
+        }
+
+        p {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .arrows {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    left: 10px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .fas {
+      font-size: 35px;
+      color: #7979799f;
+      cursor: pointer;
+    }
+  }
+
+  .trail {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    left: 50%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    transform: translateX(-50%);
+
+    div {
+      position: relative;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      margin: 0 15px;
+      cursor: pointer;
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #b1b1b193;
+        content: "";
+      }
+      &:hover {
+        &::before {
+          background-color: #797979;
+        }
+      }
+      &.active {
+        &::before {
+          background-color: #797979;
+        }
+      }
+    }
+  }
+}
