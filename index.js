@@ -1,4 +1,4 @@
-import { Slider } from "./src/slider";
+import { Slider } from "./src/slider.js";
 import "./src/style";
 
 const slider = new Slider("#slider", {
@@ -26,7 +26,7 @@ const slider = new Slider("#slider", {
     {
       title: "Element 5",
       content: "Content 5",
-      img: "https://imgfilestorage.com/1/9/47/84619.png",
+      img: "https://bipbap.ru/wp-content/uploads/2017/05/57597430aad91155356dde3c.jpg",
     },
     {
       title: "Element 6",

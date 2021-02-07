@@ -92,11 +92,15 @@ export class Slider {
   scrollLeft() {
     this.index = this.index == 1 ? this.countSlides : --this.index;
     this.scrollTo(this.index);
+    clearInterval(this.interval);
+    this.#setAutoScroll();
   }
 
   scrollRight() {
     this.index = this.index == this.countSlides ? 1 : ++this.index;
     this.scrollTo(this.index);
+    clearInterval(this.interval);
+    this.#setAutoScroll();
   }
 
   eventHandler(evt) {
@@ -116,7 +120,7 @@ export class Slider {
   }
   eventHandler = this.eventHandler.bind(this);
 
-  scrollTo(slideNumber) {
+  scrollTo() {
     let slider = this.$sliderMain.querySelector(".slider");
     slider.style.left = `${-(this.index - 1) * 100}%`;
     this.#setActiveElement();
